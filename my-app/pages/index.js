@@ -138,14 +138,9 @@ export default function Home() {
     }
   };
 
-  /**
-   * getTotalTokensMinted: Retrieves how many tokens have been minted till now
-   * out of the total supply
-   */
+
   const getTotalTokensMinted = async () => {
     try {
-      // Get the provider from web3Modal, which in our case is MetaMask
-      // No need for the Signer here, as we are only reading state from the blockchain
       const provider = await getProviderOrSigner();
       // Create an instance of token contract
       const tokenContract = new Contract(
@@ -186,10 +181,6 @@ export default function Home() {
     }
   };
 
-  /**
-   * withdrawCoins: withdraws ether and tokens by calling
-   * the withdraw function in the contract
-   */
   const withdrawCoins = async () => {
     try {
       const signer = await getProviderOrSigner(true);
@@ -354,14 +345,35 @@ export default function Home() {
             </div>
           ) : (
             <button onClick={connectWallet} className={styles.button}>
-              Connect your wallet
+              Connect Wallet
             </button>
           )}
         </div>
-        <div>
+        {/* <div>
           <img className={styles.image} src="./0.svg" />
-        </div>
+        </div> */}
+
+           <img className={styles.image} src="./cryptodevs/0.svg" alt="cryptodevs"/>
+          {/* <Image className={styles.image} src={"./cryptodevs/0.svg"}/>  */}
       </div>
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
        <footer className={styles.footer}>
