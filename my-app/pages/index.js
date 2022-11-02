@@ -21,7 +21,7 @@ export default function Home() {
   const [tokenAmount, setTokenAmount] = useState(zero);
   const [tokensMinted, setTokensMinted] = useState(zero);
   const [isOwner, setIsOwner] = useState(false);
-  const web3ModalRef =useRef();
+  const web3ModalRef = useRef();
  
 
   
@@ -33,6 +33,7 @@ export default function Home() {
         NFT_CONTRACT_ABI,
         provider
       );
+      
       const tokenContract = new Contract(
         TOKEN_CONTRACT_ADDRESS,
         TOKEN_CONTRACT_ABI,
