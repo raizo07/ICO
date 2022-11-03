@@ -2,8 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import styles from "../styles/Home.module.css";
-import Web3Modal, { providers } from "web3modal";
-import { BigNumber, Contract, utils } from "ethers";
+import Web3Modal from "web3modal";
+import { BigNumber, Contract, utils, providers } from "ethers";
 import {
   NFT_CONTRACT_ABI,
   NFT_CONTRACT_ADDRESS,
@@ -33,7 +33,7 @@ export default function Home() {
         NFT_CONTRACT_ABI,
         provider
       );
-      
+
       const tokenContract = new Contract(
         TOKEN_CONTRACT_ADDRESS,
         TOKEN_CONTRACT_ABI,
@@ -201,18 +201,7 @@ export default function Home() {
     }
   };
 
-  /**
-   * Returns a Provider or Signer object representing the Ethereum RPC with or without the
-   * signing capabilities of metamask attached
-   *
-   * A `Provider` is needed to interact with the blockchain - reading transactions, reading balances, reading state, etc.
-   *
-   * A `Signer` is a special type of Provider used in case a `write` transaction needs to be made to the blockchain, which involves the connected account
-   * needing to make a digital signature to authorize the transaction being sent. Metamask exposes a Signer API to allow your website to
-   * request signatures from the user using Signer functions.
-   *
-   * @param {*} needSigner - True if you need the signer, default false otherwise
-   */
+ 
   const getProviderOrSigner = async (needSigner = false) => {
     // Connect to Metamask
     // Since we store `web3Modal` as a reference, we need to access the `current` value to get access to the underlying object
@@ -340,22 +329,17 @@ export default function Home() {
               </div>
               <div className={styles.description}>
                 {/* Format Ether helps us in converting a BigNumber to string */}
-                Overall {utils.formatEther(tokensMinted)}/10000 have been minted!!!
+                Overall {utils.formatEther(tokensMinted)}/10000 have been minted
               </div>
               {renderButton()}
             </div>
           ) : (
             <button onClick={connectWallet} className={styles.button}>
-              Connect Wallet
+              Connect your wallet
             </button>
           )}
         </div>
-        {/* <div>
-          <img className={styles.image} src="./0.svg" />
-        </div> */}
-
            <img className={styles.image} src="./cryptodevs/0.svg" alt="cryptodevs"/>
-          {/* <Image className={styles.image} src={"./cryptodevs/0.svg"}/>  */}
       </div>
 
 
