@@ -102,7 +102,7 @@ export default function Home() {
       // wait for the transaction to get mined
       await tx.wait();
       setLoading(false);
-      window.alert("Sucessfully minted Crypto Dev Tokens");
+      window.alert("Successfully minted Crypto Dev Tokens");
       await getBalanceOfCryptoDevTokens();
       await getTotalTokensMinted();
       await getTokensToBeClaimed();
@@ -342,21 +342,8 @@ export default function Home() {
            <img className={styles.image} src="./cryptodevs/0.svg" alt="cryptodevs"/>
       </div>
 
-
-
-
-
-       <footer className={styles.footer}>
-         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by {'Wolf'}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
+      <footer className={styles.footer}>
+        Made with &#10084; by Gabriel
       </footer>
       </div>
   );
